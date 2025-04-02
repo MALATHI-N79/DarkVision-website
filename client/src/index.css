@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 6% 13%;
+    --foreground: 210 40% 98%;
+    
+    --card: 225 8% 12%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 225 8% 12%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 262 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 187 100% 42%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 225 5% 16%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 225 5% 16%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 225 6% 20%;
+    --input: 225 6% 20%;
+    --ring: 262 100% 65%;
+    
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom animations */
+  @keyframes glowPulse {
+    0%, 100% { filter: drop-shadow(0 0 5px rgba(124, 77, 255, 0.7)); }
+    50% { filter: drop-shadow(0 0 15px rgba(124, 77, 255, 0.9)); }
+  }
+
+  .glow-pulse {
+    animation: glowPulse 4s infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Scroll reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
