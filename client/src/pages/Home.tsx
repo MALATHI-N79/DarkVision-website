@@ -3,7 +3,7 @@ import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import DarkModeExperienceSection from "@/components/DarkModeExperienceSection";
 import FaqSection from "@/components/FaqSection";
 import DownloadSection from "@/components/DownloadSection";
 import Footer from "@/components/Footer";
@@ -44,7 +44,7 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <HowItWorksSection />
-      <TestimonialsSection />
+      <DarkModeExperienceSection />
       <FaqSection />
       <DownloadSection />
       <Footer />

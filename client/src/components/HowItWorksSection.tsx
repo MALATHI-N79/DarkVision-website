@@ -45,29 +45,52 @@ export default function HowItWorksSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex justify-between items-center mb-6">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
-                    <Code className="text-primary" />
+              <div className="flex mb-6">
+                <div className="w-full bg-gradient-to-r from-background via-muted to-background p-6 rounded-xl border border-border">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                      <Gauge className="text-primary text-xl" />
+                    </div>
+                    <h3 className="text-xl font-medium text-foreground">Smart Color Recognition</h3>
                   </div>
-                  <h3 className="text-xl font-medium text-foreground">AI-Powered Color Adaptation</h3>
-                </div>
-                <ToggleSwitch initialState={true} />
-              </div>
-              
-              <div className="space-y-4 font-mono text-sm text-muted-foreground mb-6">
-                <div className="bg-background p-3 rounded-lg">
-                  <span className="text-purple-400">async function</span> <span className="text-secondary">adaptColors</span>(<span className="text-orange-400">website</span>) {`{`}
-                </div>
-                <div className="bg-background p-3 rounded-lg">
-                  <div><span className="text-green-400">const</span> <span className="text-secondary">palette</span> <span className="text-purple-400">=</span> <span className="text-yellow-400">await</span> <span className="text-green-400">extractColorPalette</span>(website);</div>
-                  <div><span className="text-green-400">const</span> <span className="text-secondary">darkPalette</span> <span className="text-purple-400">=</span> <span className="text-green-400">generateDarkPalette</span>(palette);</div>
-                  <div><span className="text-green-400">const</span> <span className="text-secondary">contrast</span> <span className="text-purple-400">=</span> <span className="text-green-400">optimizeContrast</span>(darkPalette, <span className="text-orange-400">0.92</span>);</div>
-                  <div><span className="text-purple-400">return</span> <span className="text-yellow-400">applySmartAdaptation</span>(website, contrast);</div>
-                </div>
-                <div className="bg-background p-3 rounded-lg">
-                  <span className="text-gray-500">// NightShift's AI learns your preferences over time</span>
-                  <div><span className="text-green-400">userPreferenceModel</span>.<span className="text-secondary">train</span>(darkPalette);</div>
+                  
+                  <p className="text-muted-foreground mb-4">
+                    NightShift's advanced algorithm scans and analyzes a website's color palette in milliseconds, 
+                    identifying every shade, contrast level, and accent color to create the perfect dark mode experience.
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-3 mb-4">
+                    {['#F8F9FA', '#E9ECEF', '#DEE2E6', '#CED4DA', '#ADB5BD'].map((color, i) => (
+                      <motion.div 
+                        key={i}
+                        className="relative h-8 w-14 rounded-md"
+                        style={{ backgroundColor: color }}
+                        initial={{ opacity: 0.4 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ repeat: Infinity, repeatType: "reverse", duration: 1.5, delay: i * 0.2 }}
+                      >
+                        <motion.div 
+                          className="absolute inset-0 rounded-md"
+                          style={{ backgroundColor: color === '#F8F9FA' ? '#212529' : color === '#E9ECEF' ? '#343A40' : color === '#DEE2E6' ? '#495057' : color === '#CED4DA' ? '#6C757D' : '#212529' }}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ repeat: Infinity, repeatType: "reverse", duration: 1.5, delay: i * 0.2 }}
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  <div className="flex items-center justify-between text-sm text-muted-foreground mt-4">
+                    <div>Light palette detected</div>
+                    <div className="flex items-center">
+                      <motion.div 
+                        className="w-2 h-2 bg-green-500 rounded-full mr-2"
+                        animate={{ scale: [1, 1.5, 1] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                      />
+                      <span>Processing in real-time</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               
