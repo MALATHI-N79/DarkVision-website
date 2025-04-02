@@ -1,69 +1,168 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Moon } from "lucide-react";
+import { Moon, Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  
+  // Close mobile menu when resizing to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMenuOpen]);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
 
   return (
-    <nav className="fixed w-full z-50 bg-muted/80 backdrop-blur-md border-b border-muted">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-muted/90 backdrop-blur-md shadow-sm' : 'bg-muted/60 backdrop-blur-sm'} border-b border-muted`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center mr-2 glow-pulse">
-                <Moon className="text-primary text-xl" />
+              <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-primary/20 flex items-center justify-center mr-2 glow-pulse">
+                <Moon className="text-primary text-base sm:text-xl" />
               </div>
-              <span className="text-xl font-bold font-sans">DarkVision</span>
+              <span className="text-lg sm:text-xl font-bold font-sans">DarkVision</span>
             </div>
           </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-foreground hover:text-primary transition-colors duration-200">Features</a>
-            <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors duration-200">How It Works</a>
-            <a href="#testimonials" className="text-foreground hover:text-primary transition-colors duration-200">Testimonials</a>
-            <a href="#faq" className="text-foreground hover:text-primary transition-colors duration-200">FAQ</a>
-            <a href="#download" className="px-4 py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-all duration-200 shadow-md hover:shadow-lg">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+            <a href="#features" className="text-foreground hover:text-primary transition-colors duration-200 text-sm lg:text-base">Features</a>
+            <a href="#how-it-works" className="text-foreground hover:text-primary transition-colors duration-200 text-sm lg:text-base">How It Works</a>
+            <a href="#testimonials" className="text-foreground hover:text-primary transition-colors duration-200 text-sm lg:text-base">Testimonials</a>
+            <a href="#faq" className="text-foreground hover:text-primary transition-colors duration-200 text-sm lg:text-base">FAQ</a>
+            <a href="#download" className="px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-all duration-200 shadow-md hover:shadow-lg text-sm lg:text-base">
               <i className="fab fa-chrome mr-2"></i>Add to Chrome
             </a>
           </div>
           <div className="flex md:hidden items-center">
             <button 
               onClick={toggleMenu}
-              className="text-foreground hover:text-primary"
+              className="text-foreground hover:text-primary p-1 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"
               aria-label="Toggle menu"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
       </div>
       
-      {/* Mobile menu */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-muted border-b border-muted`}>
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          <a href="#features" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
-            Features
-          </a>
-          <a href="#how-it-works" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
-            How It Works
-          </a>
-          <a href="#testimonials" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
-            Testimonials
-          </a>
-          <a href="#faq" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
-            FAQ
-          </a>
-          <a href="#download" className="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4" onClick={() => setIsMenuOpen(false)}>
-            <i className="fab fa-chrome mr-2"></i>Add to Chrome
-          </a>
-        </div>
-      </div>
+      {/* Mobile menu - with animation */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-md z-40 overflow-hidden"
+          >
+            <div className="px-4 pt-6 pb-8 h-full flex flex-col">
+              <div className="space-y-6 flex-1">
+                <motion.a 
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                  href="#features" 
+                  className="block px-3 py-3 rounded-lg text-lg font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-all" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Features
+                </motion.a>
+                <motion.a 
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  href="#how-it-works" 
+                  className="block px-3 py-3 rounded-lg text-lg font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-all" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  How It Works
+                </motion.a>
+                <motion.a 
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  href="#testimonials" 
+                  className="block px-3 py-3 rounded-lg text-lg font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-all" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Testimonials
+                </motion.a>
+                <motion.a 
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  href="#faq" 
+                  className="block px-3 py-3 rounded-lg text-lg font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-all" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </motion.a>
+              </div>
+              
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, type: "spring" }}
+                className="mt-6"
+              >
+                <a 
+                  href="#download" 
+                  className="block w-full px-3 py-3 rounded-lg text-lg font-medium bg-primary text-white text-center hover:bg-primary/90 transition-all" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <i className="fab fa-chrome mr-2"></i>Add to Chrome
+                </a>
+                
+                <div className="mt-6 text-center text-muted-foreground text-sm">
+                  <p>The web looks better in the dark</p>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
