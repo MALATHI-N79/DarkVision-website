@@ -52,7 +52,7 @@ export default function WebsiteDemo({
           <ToggleSwitch 
             initialState={isDarkMode} 
             onChange={handleToggle} 
-            label="NightShift"
+            label="DarkVision"
           />
         </div>
         

@@ -18,7 +18,7 @@ export default function NavBar() {
               <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center mr-2 glow-pulse">
                 <Moon className="text-primary text-xl" />
               </div>
-              <span className="text-xl font-bold font-sans">NightShift</span>
+              <span className="text-xl font-bold font-sans">DarkVision</span>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-8">

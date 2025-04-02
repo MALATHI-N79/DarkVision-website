@@ -16,7 +16,7 @@ export default function FloatingCTA() {
         whileTap={{ scale: 0.95 }}
       >
         <ArrowDown className="mr-2 h-4 w-4" />
-        <span>Get NightShift</span>
+        <span>Get DarkVision</span>
       </motion.a>
     </motion.div>
   );

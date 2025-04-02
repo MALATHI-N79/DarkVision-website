@@ -37,7 +37,7 @@ export default function DarkModeExperienceSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            See how NightShift transforms your browsing experience with just one click.
+            See how DarkVision transforms your browsing experience with just one click.
           </motion.p>
         </div>
         
