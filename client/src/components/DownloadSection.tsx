@@ -4,9 +4,11 @@ import {
   ToggleRight, 
   Sliders, 
   Shield, 
-  GitBranch, 
-  Headset,
-  Zap
+  Code, 
+  Settings,
+  Zap,
+  Download,
+  Github
 } from "lucide-react";
 
 export default function DownloadSection() {
@@ -27,7 +29,7 @@ export default function DownloadSection() {
             transition={{ duration: 0.5 }}
           >
             <Zap className="mr-2 h-4 w-4" />
-            <span>Quick & Easy Installation</span>
+            <span>Ready to Install</span>
           </motion.div>
           
           <motion.h2 
@@ -47,12 +49,12 @@ export default function DownloadSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Join over 100,000 users enjoying a more comfortable web browsing experience with NightShift's beautiful dark mode.
+            Experience a more comfortable web browsing experience with NightShift's beautiful dark mode on any website you visit.
           </motion.p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <motion.a 
-              href="#"
+              href="https://github.com/username/nightshift" // Replace with your actual GitHub repo link
               className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-foreground font-medium hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -61,15 +63,14 @@ export default function DownloadSection() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <i className="fab fa-chrome text-2xl mr-3"></i>
+              <Download className="w-5 h-5 mr-3" />
               <div className="text-left">
-                <div className="text-sm opacity-90">Available on</div>
-                <div className="text-lg">Chrome Web Store</div>
+                <div className="text-lg">Download NightShift</div>
               </div>
             </motion.a>
             
             <motion.a 
-              href="#"
+              href="https://github.com/username/nightshift" // Replace with your actual GitHub repo link
               className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-muted text-foreground font-medium hover:bg-muted/80 transition-all duration-200 border border-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -78,10 +79,9 @@ export default function DownloadSection() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <i className="fab fa-firefox text-2xl mr-3"></i>
+              <Github className="w-5 h-5 mr-3" />
               <div className="text-left">
-                <div className="text-sm opacity-90">Coming Soon to</div>
-                <div className="text-lg">Firefox Add-ons</div>
+                <div className="text-lg">View Source Code</div>
               </div>
             </motion.a>
           </div>
@@ -98,17 +98,17 @@ export default function DownloadSection() {
               <span>Privacy Focused</span>
             </div>
             <div className="flex items-center">
-              <GitBranch className="text-secondary mr-2 h-5 w-5" />
-              <span>Regular Updates</span>
+              <Code className="text-secondary mr-2 h-5 w-5" />
+              <span>Open Source</span>
             </div>
             <div className="flex items-center">
-              <Headset className="text-secondary mr-2 h-5 w-5" />
-              <span>Full Support</span>
+              <Settings className="text-secondary mr-2 h-5 w-5" />
+              <span>Customizable</span>
             </div>
           </motion.div>
         </div>
         
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8 reveal">
           <motion.div 
             className="bg-background rounded-xl overflow-hidden shadow-lg border border-border flex flex-col"
             initial={{ opacity: 0, y: 30 }}
@@ -118,17 +118,17 @@ export default function DownloadSection() {
           >
             <div className="p-6">
               <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
-                <Laptop className="text-secondary text-xl" />
+                <Download className="text-secondary text-xl" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Step 1</h3>
               <p className="text-muted-foreground">
-                Install NightShift from the Chrome Web Store with just one click.
+                Download the zip file from our GitHub repository.
               </p>
             </div>
             <div className="mt-auto p-4 bg-muted">
               <div className="flex items-center text-muted-foreground text-sm">
                 <i className="fas fa-clock text-secondary mr-2"></i>
-                <span>Takes less than 10 seconds</span>
+                <span>Just one click</span>
               </div>
             </div>
           </motion.div>
@@ -146,13 +146,13 @@ export default function DownloadSection() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Step 2</h3>
               <p className="text-muted-foreground">
-                Click the NightShift icon in your browser to enable dark mode on any website.
+                Open Chrome and enable Developer Mode in the Extensions page.
               </p>
             </div>
             <div className="mt-auto p-4 bg-muted">
               <div className="flex items-center text-muted-foreground text-sm">
                 <i className="fas fa-check-circle text-secondary mr-2"></i>
-                <span>Instant activation</span>
+                <span>chrome://extensions/</span>
               </div>
             </div>
           </motion.div>
@@ -166,17 +166,41 @@ export default function DownloadSection() {
           >
             <div className="p-6">
               <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
-                <Sliders className="text-secondary text-xl" />
+                <Laptop className="text-secondary text-xl" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Step 3</h3>
               <p className="text-muted-foreground">
-                Customize your dark mode settings to suit your preferences (optional).
+                Click "Load Unpacked" and select the folder containing manifest.json.
+              </p>
+            </div>
+            <div className="mt-auto p-4 bg-muted">
+              <div className="flex items-center text-muted-foreground text-sm">
+                <i className="fas fa-folder-open text-secondary mr-2"></i>
+                <span>Select extension folder</span>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-background rounded-xl overflow-hidden shadow-lg border border-border flex flex-col"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="p-6">
+              <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+                <Sliders className="text-secondary text-xl" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">Step 4</h3>
+              <p className="text-muted-foreground">
+                Pin the extension to your Chrome toolbar to easily toggle dark mode.
               </p>
             </div>
             <div className="mt-auto p-4 bg-muted">
               <div className="flex items-center text-muted-foreground text-sm">
                 <i className="fas fa-paint-brush text-secondary mr-2"></i>
-                <span>Fully customizable</span>
+                <span>Ready to use!</span>
               </div>
             </div>
           </motion.div>
