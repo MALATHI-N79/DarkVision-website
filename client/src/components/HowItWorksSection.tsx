@@ -48,26 +48,26 @@ export default function HowItWorksSection() {
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
-                    <Puzzle className="text-primary" />
+                    <Code className="text-primary" />
                   </div>
-                  <h3 className="text-xl font-medium text-foreground">Intelligent Color Inversion</h3>
+                  <h3 className="text-xl font-medium text-foreground">AI-Powered Color Adaptation</h3>
                 </div>
                 <ToggleSwitch initialState={true} />
               </div>
               
               <div className="space-y-4 font-mono text-sm text-muted-foreground mb-6">
                 <div className="bg-background p-3 rounded-lg">
-                  <span className="text-purple-400">const</span> <span className="text-secondary">website</span> <span className="text-purple-400">=</span> <span className="text-yellow-400">document</span>.<span className="text-green-400">querySelector</span>(<span className="text-orange-400">'body'</span>);
+                  <span className="text-purple-400">async function</span> <span className="text-secondary">adaptColors</span>(<span className="text-orange-400">website</span>) {`{`}
                 </div>
                 <div className="bg-background p-3 rounded-lg">
-                  <span className="text-purple-400">const</span> <span className="text-secondary">darkify</span> <span className="text-purple-400">=</span> (<span className="text-secondary">element</span>) <span className="text-purple-400">=&gt;</span> {`{`}
-                  <div>&nbsp;&nbsp;<span className="text-green-400">analyzeDominantColors</span>(element);</div>
-                  <div>&nbsp;&nbsp;<span className="text-green-400">invertBrightColors</span>(element);</div>
-                  <div>&nbsp;&nbsp;<span className="text-green-400">preserveImportantElements</span>();</div>
-                  <div>{`};`}</div>
+                  <div><span className="text-green-400">const</span> <span className="text-secondary">palette</span> <span className="text-purple-400">=</span> <span className="text-yellow-400">await</span> <span className="text-green-400">extractColorPalette</span>(website);</div>
+                  <div><span className="text-green-400">const</span> <span className="text-secondary">darkPalette</span> <span className="text-purple-400">=</span> <span className="text-green-400">generateDarkPalette</span>(palette);</div>
+                  <div><span className="text-green-400">const</span> <span className="text-secondary">contrast</span> <span className="text-purple-400">=</span> <span className="text-green-400">optimizeContrast</span>(darkPalette, <span className="text-orange-400">0.92</span>);</div>
+                  <div><span className="text-purple-400">return</span> <span className="text-yellow-400">applySmartAdaptation</span>(website, contrast);</div>
                 </div>
                 <div className="bg-background p-3 rounded-lg">
-                  <span className="text-green-400">darkify</span>(website); <span className="text-gray-500">// Transform complete!</span>
+                  <span className="text-gray-500">// NightShift's AI learns your preferences over time</span>
+                  <div><span className="text-green-400">userPreferenceModel</span>.<span className="text-secondary">train</span>(darkPalette);</div>
                 </div>
               </div>
               
