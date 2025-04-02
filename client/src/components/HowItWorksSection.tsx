@@ -23,7 +23,7 @@ export default function HowItWorksSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            How NightShift Works
+            How DarkVision Works
           </motion.h2>
           <motion.p 
             className="text-xl text-muted-foreground max-w-2xl mx-auto"
@@ -55,7 +55,7 @@ export default function HowItWorksSection() {
                   </div>
                   
                   <p className="text-muted-foreground mb-4">
-                    NightShift's advanced algorithm scans and analyzes a website's color palette in milliseconds, 
+                    DarkVision's advanced algorithm scans and analyzes a website's color palette in milliseconds, 
                     identifying every shade, contrast level, and accent color to create the perfect dark mode experience.
                   </p>
                   
@@ -124,7 +124,7 @@ export default function HowItWorksSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              NightShift doesn't just invert colors blindly. Our algorithm intelligently analyzes each website's color palette to create the perfect dark mode experience.
+              DarkVision doesn't just invert colors blindly. Our algorithm intelligently analyzes each website's color palette to create the perfect dark mode experience.
             </motion.p>
             
             <div className="space-y-6">
@@ -159,7 +159,7 @@ export default function HowItWorksSection() {
                 <div>
                   <h4 className="text-foreground font-medium mb-1">Image Processing</h4>
                   <p className="text-muted-foreground">
-                    NightShift intelligently detects and preserves images, logos, and media while darkening the surrounding content.
+                    DarkVision intelligently detects and preserves images, logos, and media while darkening the surrounding content.
                   </p>
                 </div>
               </motion.div>
@@ -177,7 +177,7 @@ export default function HowItWorksSection() {
                 <div>
                   <h4 className="text-foreground font-medium mb-1">Minimal Performance Impact</h4>
                   <p className="text-muted-foreground">
-                    Optimized code ensures websites load just as quickly with NightShift enabled.
+                    Optimized code ensures websites load just as quickly with DarkVision enabled.
                   </p>
                 </div>
               </motion.div>
@@ -213,7 +213,7 @@ export default function HowItWorksSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  Toggle between original and dark mode to see how NightShift transforms any website instantly.
+                  Toggle between original and dark mode to see how DarkVision transforms any website instantly.
                 </motion.p>
                 
                 <div className="hidden md:block">

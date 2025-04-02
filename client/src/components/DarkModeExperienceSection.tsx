@@ -151,7 +151,7 @@ export default function DarkModeExperienceSection() {
                   className="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm rounded-lg px-2 py-1 text-xs font-medium text-primary flex items-center"
                 >
                   <Moon className="w-3 h-3 mr-1" />
-                  NightShift Enabled
+                  DarkVision Enabled
                 </motion.div>
               )}
             </AnimatePresence>
@@ -182,7 +182,7 @@ export default function DarkModeExperienceSection() {
           >
             <h3 className="text-2xl font-bold text-foreground mb-6">Try It Yourself</h3>
             <p className="text-muted-foreground mb-8">
-              Toggle the switch below to see how NightShift instantly transforms websites from harsh light 
+              Toggle the switch below to see how DarkVision instantly transforms websites from harsh light 
               mode to a comfortable dark experience. Your eyes will thank you!
             </p>
             

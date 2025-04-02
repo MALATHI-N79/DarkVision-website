@@ -24,30 +24,34 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Transform Every Website with 
-              <span className="text-primary"> Beautiful Dark Mode</span>
+              Illuminate the Dark with
+              <span className="text-primary"> DarkVision</span>
             </motion.h1>
             <motion.p 
-              className="text-xl text-muted-foreground mb-8 max-w-lg"
+              className="text-xl text-muted-foreground mb-4 max-w-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Protect your eyes, save battery, and enjoy browsing with automatic dark mode for any website. One click is all it takes.
+              See the web in a whole new light. Transform any website into a beautiful dark mode experience that's gentle on your eyes and your device's battery.
+            </motion.p>
+            <motion.p
+              className="text-lg text-primary font-medium mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Your eyes deserve a break. Let DarkVision be their guardian.
             </motion.p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
               <a href="#download" className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all duration-200 shadow-md hover:shadow-lg flex items-center w-full sm:w-auto justify-center">
-                <i className="fab fa-chrome mr-2"></i>Add to Chrome
+                <i className="fab fa-chrome mr-2"></i>Get DarkVision
               </a>
-              <div className="flex items-center">
-                <div className="flex -space-x-2 mr-3">
-                  <div className="w-9 h-9 rounded-full bg-gray-500 border-2 border-background"></div>
-                  <div className="w-9 h-9 rounded-full bg-gray-600 border-2 border-background"></div>
-                  <div className="w-9 h-9 rounded-full bg-gray-700 border-2 border-background"></div>
-                </div>
-                <div className="text-muted-foreground text-sm">
-                  <span className="text-foreground font-medium">100K+</span> users
+              <div className="bg-background/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-border">
+                <div className="text-muted-foreground text-sm flex items-center">
+                  <i className="fas fa-eye-slash text-primary mr-2"></i>
+                  <span className="text-foreground font-medium">Open Source</span> & Free Forever
                 </div>
               </div>
             </div>

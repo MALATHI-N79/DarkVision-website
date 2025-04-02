@@ -12,7 +12,7 @@ const features = [
   {
     icon: <WandSparkles className="text-primary text-2xl" />,
     title: "Instant Dark Mode",
-    description: "Transform any website with a single click. NightShift automatically adapts colors for a perfect dark experience."
+    description: "Transform any website with a single click. DarkVision automatically adapts colors for a perfect dark experience."
   },
   {
     icon: <Eye className="text-primary text-2xl" />,
@@ -37,7 +37,7 @@ const features = [
   {
     icon: <Clock className="text-primary text-2xl" />,
     title: "Auto Scheduler",
-    description: "Set NightShift to automatically activate at sunset or your preferred time for seamless transitions."
+    description: "Set DarkVision to automatically activate at sunset or your preferred time for seamless transitions."
   }
 ];
 
@@ -53,7 +53,7 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Why Choose NightShift
+            Why Choose DarkVision
           </motion.h2>
           <motion.p 
             className="text-xl text-muted-foreground max-w-2xl mx-auto"

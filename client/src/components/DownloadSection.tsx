@@ -49,12 +49,12 @@ export default function DownloadSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Experience a more comfortable web browsing experience with NightShift's beautiful dark mode on any website you visit.
+            Experience a more comfortable web browsing experience with DarkVision's beautiful dark mode on any website you visit.
           </motion.p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <motion.a 
-              href="https://github.com/username/nightshift" // Replace with your actual GitHub repo link
+              href="https://github.com/username/darkvision" // Replace with your actual GitHub repo link
               className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-foreground font-medium hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -65,12 +65,12 @@ export default function DownloadSection() {
             >
               <Download className="w-5 h-5 mr-3" />
               <div className="text-left">
-                <div className="text-lg">Download NightShift</div>
+                <div className="text-lg">Download DarkVision</div>
               </div>
             </motion.a>
             
             <motion.a 
-              href="https://github.com/username/nightshift" // Replace with your actual GitHub repo link
+              href="https://github.com/username/darkvision" // Replace with your actual GitHub repo link
               className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-muted text-foreground font-medium hover:bg-muted/80 transition-all duration-200 border border-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export default function DownloadSection() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Step 1</h3>
               <p className="text-muted-foreground">
-                Download the zip file from our GitHub repository.
+                Download DarkVision zip file from our GitHub repository.
               </p>
             </div>
             <div className="mt-auto p-4 bg-muted">
