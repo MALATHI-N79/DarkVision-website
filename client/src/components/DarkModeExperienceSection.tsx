@@ -140,11 +140,36 @@ export default function DarkModeExperienceSection() {
               <div className="h-2 w-2/3 mx-auto bg-gray-600 rounded-b-lg" />
             </div>
             
-            {/* NightShift watermark */}
-            <div className="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm rounded-lg px-2 py-1 text-xs font-medium text-primary flex items-center">
-              <Moon className="w-3 h-3 mr-1" />
-              NightShift Enabled
-            </div>
+            {/* Mode watermarks */}
+            <AnimatePresence>
+              {isDarkMode && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm rounded-lg px-2 py-1 text-xs font-medium text-primary flex items-center"
+                >
+                  <Moon className="w-3 h-3 mr-1" />
+                  NightShift Enabled
+                </motion.div>
+              )}
+            </AnimatePresence>
+            
+            <AnimatePresence>
+              {!isDarkMode && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute top-4 right-4 bg-yellow-500/20 backdrop-blur-sm rounded-lg px-2 py-1 text-xs font-medium text-yellow-500 flex items-center"
+                >
+                  <Sun className="w-3 h-3 mr-1" />
+                  Light Mode Active
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
           
           {/* Controls section */}
