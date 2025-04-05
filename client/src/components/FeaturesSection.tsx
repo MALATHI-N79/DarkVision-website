@@ -20,9 +20,9 @@ const features = [
     description: "Reduce eye fatigue during late-night browsing sessions with softer contrasts and eliminated bright whites."
   },
   {
-    icon: <Sliders className="text-primary w-5 h-5 sm:w-6 sm:h-6" />,
-    title: "Custom Settings",
-    description: "Fine-tune brightness, contrast, and color temperature for your perfect dark mode experience."
+    icon: <Clock className="text-primary w-5 h-5 sm:w-6 sm:h-6" />,
+    title: "Auto Scheduler",
+    description: "Set DarkVision to automatically activate at sunset or your preferred time for seamless transitions."
   },
   {
     icon: <Zap className="text-primary w-5 h-5 sm:w-6 sm:h-6" />,
@@ -35,9 +35,9 @@ const features = [
     description: "Create exceptions for websites where you prefer the original design to remain unchanged."
   },
   {
-    icon: <Clock className="text-primary w-5 h-5 sm:w-6 sm:h-6" />,
-    title: "Auto Scheduler",
-    description: "Set DarkVision to automatically activate at sunset or your preferred time for seamless transitions."
+    icon: <Sliders className="text-primary w-5 h-5 sm:w-6 sm:h-6" />,
+    title: "Custom Settings",
+    description: "Fine-tune brightness, contrast, and color temperature for your perfect dark mode experience."
   }
 ];
 

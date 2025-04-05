@@ -25,8 +25,14 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Illuminate the Dark with
-              <span className="text-primary block sm:inline"> DarkVision</span>
+              <span className="block leading-snug mb-2">
+                Embrace the
+                <span className="text-primary block sm:inline"> Darkness</span>
+              </span>
+              <span className="block leading-snug">
+                Enhance Your
+                <span className="text-primary block sm:inline"> Browsing</span>
+              </span>
             </motion.h1>
             <motion.p 
               className="text-lg sm:text-xl text-muted-foreground mb-3 sm:mb-4 max-w-lg"
@@ -34,10 +40,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              See the web in a whole new light. Transform any website into a beautiful dark mode experience that's gentle on your eyes and your device's battery.
+              Turn every website into a sleek, eye-friendly dark mode experience. Protect your eyes, save battery, and browse in style — day or night.
             </motion.p>
             <motion.p
-              className="text-base sm:text-lg text-primary font-medium mb-6 sm:mb-8"
+              className="text-lg sm:text-xl md:text-2xl text-primary font-semibold mb-6 sm:mb-8 py-2 sm:py-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -49,27 +55,6 @@ export default function HeroSection() {
               <a href="#download" className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all duration-200 shadow-md hover:shadow-lg flex items-center w-full sm:w-auto justify-center">
                 <i className="fab fa-chrome mr-2"></i>Get DarkVision
               </a>
-              <div className="bg-background/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-border w-full sm:w-auto text-center sm:text-left">
-                <div className="text-muted-foreground text-sm flex items-center justify-center sm:justify-start">
-                  <i className="fas fa-eye-slash text-primary mr-2"></i>
-                  <span className="text-foreground font-medium">Open Source</span> & Free Forever
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex flex-wrap justify-center sm:justify-start items-center text-muted-foreground text-sm sm:text-base gap-4 sm:gap-0">
-              <div className="flex items-center mr-0 sm:mr-6">
-                <i className="fas fa-star text-yellow-400 mr-1"></i>
-                <span className="font-medium">4.9/5</span>
-              </div>
-              <div className="flex items-center mr-0 sm:mr-6">
-                <i className="fas fa-bolt text-secondary mr-1"></i>
-                <span className="font-medium">Lightweight</span>
-              </div>
-              <div className="flex items-center">
-                <i className="fas fa-shield-alt text-green-500 mr-1"></i>
-                <span className="font-medium">Secure</span>
-              </div>
             </div>
           </div>
           

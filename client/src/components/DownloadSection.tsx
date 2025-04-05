@@ -55,7 +55,9 @@ export default function DownloadSection() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
             <motion.a 
-              href="https://github.com/username/darkvision" // Replace with your actual GitHub repo link
+              href="https://github.com/MALATHI-N79/DarkVision" 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-primary text-foreground font-medium hover:bg-primary/90 transition-all duration-200 shadow-md sm:shadow-lg hover:shadow-xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +73,9 @@ export default function DownloadSection() {
             </motion.a>
             
             <motion.a 
-              href="https://github.com/username/darkvision" // Replace with your actual GitHub repo link
+              href="https://github.com/MALATHI-N79/DarkVision" 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-muted text-foreground font-medium hover:bg-muted/80 transition-all duration-200 border border-border"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
